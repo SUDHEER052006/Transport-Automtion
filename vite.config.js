@@ -6,5 +6,5 @@ export default defineConfig(({ command }) => ({
   plugins: [react()],
   // GitHub Pages serves the site at /<repo-name>/ — must match your repo name.
   // Local dev stays at plain "/".
-  base: command === 'build' ? '/campus-bus-tracker/' : '/',
+  base: command === 'build' ? '/Transport-Automtion/' : '/',
 }))
