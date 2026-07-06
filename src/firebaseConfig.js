@@ -12,10 +12,11 @@
 // ============================================================
 
 export const firebaseConfig = {
-  apiKey: "PASTE_API_KEY",
-  authDomain: "PASTE_PROJECT_ID.firebaseapp.com",
-  projectId: "PASTE_PROJECT_ID",
-  storageBucket: "PASTE_PROJECT_ID.appspot.com",
-  messagingSenderId: "PASTE_SENDER_ID",
-  appId: "PASTE_APP_ID",
+  apiKey: "AIzaSyDcHb5tOmt1V0LA7fC3IriTJ5DIkQO1lCM",
+  authDomain: "campus-bus-tracker-cd9c4.firebaseapp.com",
+  projectId: "campus-bus-tracker-cd9c4",
+  storageBucket: "campus-bus-tracker-cd9c4.firebasestorage.app",
+  messagingSenderId: "346558055579",
+  appId: "1:346558055579:web:979a857f804d264fc7b23e",
+  measurementId: "G-L1TD3Z7HHN",
 };
