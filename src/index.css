@@ -1,0 +1,28 @@
+/* src/index.css — GLOBAL RESET ONLY.
+   All component/layout styles live in App.css (authoritative).
+   Keeping this file minimal prevents style-override conflicts. */
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0d1117;
+  color: #fff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --background-dark: #0d1117;
+  --card-background: #1e293b;
+  --card-border: #475569;
+  --accent-yellow: #facc15;
+}
+
+button {
+  font-family: inherit;
+}

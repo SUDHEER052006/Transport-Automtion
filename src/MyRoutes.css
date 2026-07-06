@@ -1,0 +1,29 @@
+.empty-message {
+  text-align: center;
+  margin-top: 4rem;
+  color: #cbd5e1;
+  font-size: 1.1rem;
+}
+
+.bus-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  text-align: left;
+}
+
+.bus-card {
+  background-color: #1e293b;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #475569;
+}
+
+.bus-card h3 {
+  margin-top: 0;
+}
+
+.status-text.on-time, .status-text.in { color: #22c55e; }
+.status-text.out { color: #f97316; }
+.status-text.delayed { color: #ef4444; }
+.status-text.idle { color: #64748b; }

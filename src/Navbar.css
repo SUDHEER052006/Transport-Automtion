@@ -1,0 +1,82 @@
+/* src/Navbar.css */
+
+.student-navbar {
+    background-color: #1e293b;
+    padding: 15px 30px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    background-color: #0f172a;
+    padding: 5px;
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+
+.nav-item {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.nav-item:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-item.active {
+    background-color: #3b82f6;
+    color: white;
+    box-shadow: 0 2px 5px rgba(59, 130, 246, 0.4);
+}
+
+.logout-btn {
+    background: transparent;
+    border: 1px solid #ef4444;
+    color: #ef4444;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #ef4444;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .student-navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+    }
+}
