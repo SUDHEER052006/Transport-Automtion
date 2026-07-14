@@ -82,7 +82,10 @@ html, body, #root {
 .header-logo { height: 60px; width: auto; flex-shrink: 0; }
 
 .app-header h2 {
-  margin: 0; font-weight: 800; font-size: 1.6rem; 
+  margin: 0; font-weight: 800;
+  /* Fluid size: shrinks on smaller screens so the nowrap reveal never
+     pushes the text tail under the bus */
+  font-size: clamp(1.05rem, 1.5vw, 1.6rem);
   letter-spacing: 2px; color: white; text-transform: uppercase;
   text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
@@ -361,6 +364,41 @@ html, body, #root {
 @keyframes fade-in-up {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- TABLET RESPONSIVENESS (601px – 1024px) --- */
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* Static header: the animated nowrap reveal can't fit the full college
+     name at tablet widths — text was disappearing under the bus */
+  .reveal-container {
+    width: 100%;
+    animation: none;
+    opacity: 1;
+    white-space: normal;
+    overflow: visible;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 0 140px 0 18px; /* right lane reserved for the full-size bus */
+    box-sizing: border-box;
+  }
+  .app-header h2 {
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    line-height: 1.45;
+    text-align: left;
+  }
+  .header-logo { height: 48px; }
+
+  /* College background photo: 'cover' over-zooms a wide photo on a tall
+     portrait tablet — fit it to the screen width instead */
+  .background-watermark {
+    background-size: 100% auto;
+    background-position: center;
+  }
+}
+@media (min-width: 601px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Landscape tablets are wide enough for cover to look natural again */
+  .background-watermark { background-size: cover; }
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
