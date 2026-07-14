@@ -79,7 +79,15 @@ html, body, #root {
   animation: infinite-reveal 8s ease-in-out infinite; 
 }
 
-.header-logo { height: 60px; width: auto; flex-shrink: 0; }
+/* Logo art is dark navy on black — brighten + circle-crop + brand ring
+   so it reads clearly against the dark header */
+.header-logo {
+  height: 60px; width: auto; flex-shrink: 0;
+  border-radius: 50%;
+  filter: brightness(2.2) saturate(1.5);
+  border: 2px solid rgba(250, 204, 21, 0.9);
+  box-shadow: 0 0 14px rgba(250, 204, 21, 0.35), 0 0 30px rgba(59, 130, 246, 0.25);
+}
 
 .app-header h2 {
   margin: 0; font-weight: 800;
@@ -388,17 +396,17 @@ html, body, #root {
     text-align: left;
   }
   .header-logo { height: 48px; }
-
-  /* College background photo: 'cover' over-zooms a wide photo on a tall
-     portrait tablet — fit it to the screen width instead */
-  .background-watermark {
-    background-size: 100% auto;
-    background-position: center;
-  }
 }
-@media (min-width: 601px) and (max-width: 1024px) and (orientation: landscape) {
-  /* Landscape tablets are wide enough for cover to look natural again */
-  .background-watermark { background-size: cover; }
+
+/* --- PORTRAIT BACKGROUND: rotate the wide campus photo 90° so it fills
+   the tall screen edge-to-edge instead of over-zooming a center strip --- */
+@media (orientation: portrait) {
+  .background-watermark {
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(90deg) translateY(-100%);
+    transform-origin: top left;
+  }
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
